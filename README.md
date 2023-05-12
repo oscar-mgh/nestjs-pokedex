@@ -24,9 +24,10 @@ npm install -g @nestjs/cli
 docker compose up -d
 ```
 
-5.- Establecer variables de entorno en __.env__ a partir del __.env.template__ 
+5.- Establecer variables de entorno en **.env** a partir del **.env.template**
 
 6.- Ejecutar la aplicación en modo de desarrollo
+
 ```
 yarn start:dev
 ```
@@ -37,8 +38,16 @@ yarn start:dev
 http://localhost:3000/api/seed
 ```
 
-
 ## Tech Stack:
 
 -   MongoDB
 -   Nest
+
+# Production Build
+
+1.- Crear archivo **.env.prod** y llenar las variables de entorno
+2.- Crear la nueva imagen
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
